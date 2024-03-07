@@ -41,16 +41,41 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col h-screen w-full justify-center items-center">
-      <Tabs defaultValue="account" className="w-[450px]">
+      <Tabs defaultValue="password" className="w-[450px]">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="account">Inscreva-se</TabsTrigger>
-          <TabsTrigger value="password">Entrar</TabsTrigger>
+          <TabsTrigger className="font-extrabold" value="password">Entrar</TabsTrigger>
+          <TabsTrigger className="font-extrabold" value="account">Inscreva-se</TabsTrigger>
         </TabsList>
+        <TabsContent value="password">
+          <Card>
+            <CardHeader className="flex justify-center items-center">
+              <CardTitle>
+                <img className="h-40 w-40 rounded-full" src="images/banner.jpg" alt="" />
+              </CardTitle>
+              <CardDescription>
+                <span className="font-extrabold">All In One:</span> Sua organização, em um clique. Acesse já!
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <div className="space-y-1">
+                <Label htmlFor="current">Email</Label>
+                <Input id="current" type="password" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="new">Password</Label>
+                <Input id="new" type="password" />
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button>Entrar</Button>
+            </CardFooter>
+          </Card>
+        </TabsContent>
         <TabsContent value="account">
           <Card>
             <CardHeader className="flex justify-center items-center">
               <CardTitle>
-                <img className="h-40 w-40 rounded-full" src="logomarca.png" alt="" />
+                <img className="h-40 w-40 rounded-full" src="images/logomarca.png" alt="" />
               </CardTitle>
               <CardDescription>
                 Tenha tudo em um só lugar. Inscreva-se no <span className="font-extrabold">All In One. </span>
@@ -67,30 +92,7 @@ export default async function Home() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button>Inscreve-se</Button>
-            </CardFooter>
-          </Card>
-        </TabsContent>
-        <TabsContent value="password">
-          <Card>
-            <CardHeader>
-              <CardTitle>Password</CardTitle>
-              <CardDescription>
-                Change your password here. After saving, you'll be logged out.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <div className="space-y-1">
-                <Label htmlFor="current">Current password</Label>
-                <Input id="current" type="password" />
-              </div>
-              <div className="space-y-1">
-                <Label htmlFor="new">New password</Label>
-                <Input id="new" type="password" />
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button>Save password</Button>
+              <Button>Inscreva-se</Button>
             </CardFooter>
           </Card>
         </TabsContent>
