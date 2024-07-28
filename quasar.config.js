@@ -21,7 +21,7 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
-      
+      'supabase'
       
     ],
 
@@ -60,7 +60,10 @@ module.exports = configure(function (/* ctx */) {
 
       // publicPath: '/',
       // analyze: true,
-      // env: {},
+      env: {
+        VITE_SUPABASE_URL: process.env.VITE_SUPABASE_KEY,
+        VITE_SUPABASE_KEY: process.env.VITE_SUPABASE_KEY
+      },
       // rawDefine: {}
       // ignorePublicFolder: true,
       // minify: false,
